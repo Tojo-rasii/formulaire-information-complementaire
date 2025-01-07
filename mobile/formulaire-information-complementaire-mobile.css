@@ -1,0 +1,73 @@
+
+@media screen and (max-width: 930px) {
+/* SECTION RANGE */
+
+    .section-article-range {
+        /* background: green; */
+        margin: 0 0;width: 92.5% !important; 
+        margin:0 auto!important;
+    }
+    
+/* SECTION TEXTAREA */
+.fig-textarea {
+    /* background: red; */
+    padding: 0.8em 0;  width: 92.5% !important; 
+    margin:0 auto!important;
+}
+
+    /* head */
+    .head-apercu-autre {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        /* background: red; */  width: 92.5% !important; 
+        margin:0 auto!important;
+        padding: 2em 0;
+    }
+ 
+    /* DROP */
+    .container-drop-autre{
+        /* background: red; */
+        width: 92.5% !important; 
+        margin:0 auto!important;
+    }
+ 
+
+    /* ACCEPT */
+    .accept-conditions{
+        /* background: red; */
+        width: 92.5% !important; 
+        margin:0 auto!important;
+    }
+    /* .check-ic input{
+        width: 1.5em !important;
+        height: 1.5em !important;
+    } */
+
+   /* BTN */
+    .button-ic{
+        display: flex;  
+        flex-direction: column !important;
+        width: 100%;
+        margin: 0;
+        gap: 2em !important;
+    
+    }
+    .back-ic{
+        width: 92.5% !important; 
+
+    }
+    .button-ic button{
+        width: 92.5%;
+    }
+    .row-btn-ic{
+        display: flex;  
+        flex-direction: column !important;
+        width: 100%;
+        gap: 1em;
+    }
+
+  
+
+}

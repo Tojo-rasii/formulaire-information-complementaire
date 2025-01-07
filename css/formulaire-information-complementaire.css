@@ -1,0 +1,233 @@
+.information-complementaire{
+    /* background: red; */
+}
+.header-blue-section{
+    /* background: green; */
+}
+.row-legend{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary);
+    padding: 1.5em;
+    color: #fff;
+}
+
+.row-legend h1{
+    font-size: 1.3em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/* SECTION RANGE */
+
+.section-article-range {
+    /* background: green; */
+    position: relative;
+    margin: 0 2.5em;
+    border-bottom: 1px solid silver;
+}
+
+.section-article-range picture {
+    /* background: green; */
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: center;
+    width: 100%;
+    gap: 0.2em;
+    /* align-items: first baseline; */
+    padding: 2.5em;
+}
+
+.section-article-range picture {
+    /* background: green; */
+}
+
+.section-article-range picture label {
+    /* background: blue; */
+    flex: 1;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hr {
+    /* position: absolute; */
+    /* bottom: 53%; */
+    /* background: red; */
+    width: 43%;
+    /* padding: 1em; */
+}
+
+.section-article-range picture label.active h4 {
+    font-weight: 600;
+    color: #000;
+    font-size: 1.1em;
+}
+.section-article-range picture label.active .active-h4 {
+    font-weight: 700;
+    color: #000;
+    font-size: 1.1em;
+}
+
+.section-article-range picture label h4 {
+    color: silver;
+}
+
+.section-article-range picture label.active p {
+    background: #03A84E;
+    color: white;
+}
+
+.section-article-range picture label p {
+    font-size: 1.2em;
+    width: 2em;
+    margin: 0 auto;
+    height: 2em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    color: #fff;
+    background: silver;
+    margin-bottom: 1em;
+}
+
+.article-title {
+    /* background: red; */
+    padding: 3em 0;
+}
+
+
+
+/* SECTION FORM */
+.ic-forme-section{
+    margin-top: 2em;
+}
+
+/* SECTION TEXTAREA */
+.fig-textarea {
+    /* background: red; */
+    padding: 0.8em 2.5em;
+}
+
+.picture-textarea label {
+    /* background: green; */
+    position: relative;
+}
+
+.picture-textarea label h3 {
+    /* background: green; */
+    font-weight: 700;
+    position: absolute;
+    background: #fff;
+    margin-left: 1em;
+    margin-top: -0.9em;
+    padding-inline: 0.5em;
+    font-size: 1.4em;
+}
+
+.picture-textarea label textarea {
+    /* background: yellow; */
+    width: 100%;
+    /* height: 13em; */
+    background: none;
+    padding: 2em;
+    border: 1px solid #58585673;
+    font-family: 'poppins';
+}
+
+/* SECTION AUTRE DOCUMENT */
+
+.head-apercu-autre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* background: red; */
+    padding: 2em 2.5em;
+}
+.col-autre-document{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.title-doc{
+    font-weight: 700; font-size: 1.4em;
+}
+
+.p-doc{
+    color: #6b6b6b;
+    font-size: 1em;
+}
+
+/* DROP AUTRE */
+
+.drop-autre-document{
+    /* border-bottom: 1px solid silver; */
+    width: 100%;
+}
+.container-drop-autre{
+    /* background: red; */
+    margin: 1em 2.5em;
+    border: 1px dashed #585856;
+    padding: 4em 0;
+    text-align: center;
+}
+
+.col-autre-drop{
+    /* background: green; */
+    margin: 0 auto;
+    width: 80%; display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+.col-autre-drop button{
+    text-wrap: wrap;
+}
+/* Accept condition */
+.accept-conditions{
+    border-top: 1px solid silver;
+    margin: 3em 2.5em;
+    padding: 3em 0;
+    /* background: red; */
+}
+.check-ic{
+    /* background: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    /* font-size: 1.1em; */
+}
+
+.check-ic input{
+    width: 1.1em;
+    height: 1.1em;
+}
+
+/* BTN */
+.button-ic{
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em 2.5em;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row-btn-ic{
+    display: flex;  
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.btn-green{
+    background: #03A84E !important;
+}

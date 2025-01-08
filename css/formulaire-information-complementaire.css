@@ -250,9 +250,12 @@
 }
 
 /* TABLE */
+.table-ic {
+    margin: 2em 2.5em;
+    /* background: red; */
+}
 
-
-.table-doc {
+.table-doc-ic {
     /* background: rgba(0, 0, 0, 0.308); */
     /* border: 1px solid black; */
     width: 100%;
@@ -261,13 +264,14 @@
     /* background: green; */
 }
 
-.tr {
+.tr-ic {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     /* align-items: center; */
+    border-radius: 0.5em;
     flex-wrap: wrap;
-    outline: 0.5px solid #585856;
+    outline: 1px solid #585856;
 
     /* background: green; */
     /* height: 5em; */
@@ -301,7 +305,7 @@
 }
 
 .th {
-    border: 0.5px solid #585856;
+    border-right: 1px solid #585856;
 
     padding: 0.8em;
     text-wrap: nowrap;
@@ -309,6 +313,10 @@
     height: 5em;
     align-items: center;
     /* background: green; */
+}
+
+.th:last-child {
+    border-right: none !important;
 }
 
 .th-check {
@@ -324,23 +332,18 @@
 .th-check input {
     width: 1.5em;
     height: 1.5em;
-    /* accent-color: green; */
+    accent-color: green;
 }
 
-.table-doc thead tr th {
-    border: 1px solid #ccc;
-    text-wrap: nowrap;
-    /* background: green; */
-}
-
-.thead {
+.thead-ic {
     display: flex;
     flex-direction: column;
-    gap: 0 !important;
+    gap: 1em;
+
 }
 
 
-.table-parent {
+.table-parent-ic {
     /* background: green !important; */
     overflow: auto;
     /* display: none !important; */
@@ -348,43 +351,9 @@
 
 }
 
-.table-parent figure {
+.table-parent-ic figure {
     /* background: red; */
     width: 100%;
-}
-
-.table-doc tr th {
-    /* background: yellow; */
-    /* border-right: 1px solid black; */
-    padding: 1em;
-    font-weight: 550;
-
-}
-
-.table-doc tr th:nth-child(3) {
-    /* background: red; */
-    width: 40%;
-}
-
-.table-doc tr th:last-child {
-    /* background: red; */
-}
-
-.table-doc tr th:nth-child(2) {
-    /* background: green; */
-    text-align: left;
-}
-
-.table-doc tr th input[type='checkbox'] {
-    width: 1.2em;
-    height: 1.2em;
-    accent-color: var(--primary);
-}
-
-.table-doc tr th:last-child {
-    /* background: yellow; */
-    /* border-right: none; */
-
 }
 
 .red {
@@ -422,39 +391,63 @@
     scale: 1.05;
 }
 
-.pop-btn2 {
+.inpt-child-div {
     /* background: red; */
+    /* z-index: -20000; */
+    position: relative;
+}
+
+.title-doc {
+    font-weight: 700;
+    padding: 0.5em 0;
+
+}
+
+.inpt-child {
+    padding: 1em;
+    width: 100%;
+    outline: 1.3px solid #585856;
+    background: none;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.arrow-idown {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    margin-right: 0.5em;
+}
+
+/* SElect pop */
+.inpt-child-div {
+    position: relative;
+    display: inline-block;
     width: 100%;
 }
 
-.pop-btn2 div {
-    /* background: red; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2em 0;
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 99999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-end {
-    /* background: red; */
-    width: max-content !important;
-    display: flex;
-    gap: 1em;
-
+.hidden {
+    display: none;
 }
 
-
-.i-disabled {
-    opacity: 0.6;
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.i-disabled:hover {
-    scale: 1 !important;
-    cursor: default;
+.dropdown-item:hover {
+    background: #f0f0f0;
 }
-
-/* .p-file-select {
-    visibility: hidden;
-} */

@@ -271,7 +271,7 @@
     /* align-items: center; */
     border-radius: 0.5em;
     flex-wrap: wrap;
-    outline: 1px solid #585856;
+    outline: 1px solid #5858567e;
 
     /* background: green; */
     /* height: 5em; */
@@ -288,7 +288,7 @@
     align-items: center;
 }
 
-.p-file-select {
+.p-file-select-ic {
     display: flex;
     flex-direction: row;
     gap: 0.5em;
@@ -305,7 +305,7 @@
 }
 
 .th {
-    border-right: 1px solid #585856;
+    border: 1px solid #585856;
 
     padding: 0.8em;
     text-wrap: nowrap;

@@ -53,9 +53,11 @@
     /* background: green; */
 }
 
-.modal-hr1,.modal-hr2{
+.modal-hr1,
+.modal-hr2 {
     margin-top: -3em !important;
 }
+
 .section-article-range picture label {
     /* background: blue; */
     flex: 1;
@@ -302,9 +304,9 @@
     text-wrap: nowrap;
     max-width: 30vw;
     width: 100%;
-    font-weight: 500;
+    font-weight: 600;
     align-items: center;
-    color: #585856;
+    /* color: #585856; */
 }
 
 .th {

@@ -109,7 +109,8 @@
                                         </i>
                                         <p>Glisser vos fichiers dans cette zone</p>
                                         <p>ou</p>
-                                        <button class="btn-blue">Cliquer ici pour sélectionner manuellement</button>
+                                        <button class="btn-blue" id="fileButton">Cliquer ici pour sélectionner
+                                            manuellement</button>
                                         <input type="file" id="fileInput" multiple style="display:none;">
 
                                     </div>
@@ -117,13 +118,15 @@
                             </picture>
                         </article>
 
-                        <article class="table-ic">
+                        <article class="table-ic" style="display: none;" id="fileTable">
                             <div class="picture-table-ic">
                                 <picture class="table-parent-ic">
                                     <figure>
                                         <div class="table-doc-ic">
                                             <div class="thead-ic">
-                                                <div class="tr-ic">
+                                                <div class="tbody-ic" id="fileList"></div>
+
+                                                <!-- <div class="tr-ic">
                                                     <div class="th th-check"><input type="checkbox" name="" id=""></div>
                                                     <div class="th">
                                                         <p class="p-file-select-ic">Lettre_motivation.pdf</p>
@@ -191,8 +194,8 @@
 
                                                         </i>
                                                     </div>
-                                                </div>
-                                              
+                                                </div> -->
+
 
                                             </div>
                                         </div>
@@ -200,6 +203,7 @@
                                 </picture>
                             </div>
                         </article>
+
 
                         <!-- ARTICLE ACCEPT CONDITION -->
                         <article class="accept-conditions">
@@ -235,7 +239,7 @@
             e.preventDefault();
         })
 
-    
+
     </script>
     <script src="javascript/select-ic-table.js"></script>
     <script src="javascript/add&drop.js"></script>

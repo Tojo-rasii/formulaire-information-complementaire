@@ -6,6 +6,7 @@
 
 .fig-ic-primary {
     background: white;
+    padding-bottom: 2em;
 }
 
 .header-blue-section {
@@ -310,7 +311,7 @@
 }
 
 .th {
-    border-right: 1px solid #5858567e;
+    border: 1px solid #5858567e;
 
     padding: 0.8em;
     text-wrap: nowrap;
@@ -320,9 +321,9 @@
     /* background: green; */
 }
 
-.th:last-child {
+/* .th:last-child {
     border-right: none !important;
-}
+} */
 
 .th-check {
     /* background: red; */
@@ -428,27 +429,34 @@
 
 /* SElect pop */
 
-.hidden {
-    display: none;
+.inpt-child-div {
+    position: relative;
+    /* display: inline-block; */
+    width: 100%;
 }
 
-.status-dropdown {
-    border: 1px solid #ddd;
-    background: #fff;
+.dropdown {
     position: absolute;
-    width: 200px;
-    margin-top: 5px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 99999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hiddenselect {
+    display: none;
 }
 
 .dropdown-item {
     padding: 10px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 .dropdown-item:hover {
     background: #f0f0f0;
-}
-
-.inpt-child-div {
-    position: relative;
 }

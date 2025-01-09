@@ -46,6 +46,29 @@
         padding: 2em 0;
     }
 
+    
+.tr-ic {
+    display: flex;
+    flex-direction: column;
+
+    /* height: 5em; */
+}
+
+.p-file-select-ic {
+
+    justify-content: center !important;
+
+    max-width: 100% !important;
+
+}
+
+.th {
+
+    flex: 1 0;
+
+    /* background: green; */
+}
+
     /* DROP */
     .container-drop-autre {
         /* background: red; */

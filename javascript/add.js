@@ -1,83 +1,48 @@
-const dropZone = document.getElementById('dropZone');
-const fileInput = document.getElementById('fileInput');
 
+// ADD FILE
 
-dropZone.addEventListener('dragover', (event) => {
-  event.preventDefault();
-  dropZone.style.backgroundColor = "#f2f2f2";
-});
-
-dropZone.addEventListener('dragleave', () => {
-  dropZone.style.backgroundColor = "white";
-});
-
-
-dropZone.addEventListener('drop', (event) => {
-  event.preventDefault();
-  dropZone.style.backgroundColor = "white";
-  handleFiles(event.dataTransfer);
-});
-
-function handleFiles(input) {
-  const files = input.files || input.target.files;
-
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-
-    alert(file.name);
-
-  }
-
-
-
-}
-
-document.getElementById("fileButton").addEventListener("click", () => {
-  document.getElementById("fileInput").click();
-});
+// document.getElementById("fileButton").addEventListener("click", () => {
+//   document.getElementById("fileInput").click();
+// });
 
 document.getElementById("fileInput").addEventListener("change", (event) => {
-  const fileInput = event.target;
-  const fileList = document.getElementById("fileList");
-  const fileTable = document.getElementById("fileTable");
+    const fileInput = event.target;
+    const fileList = document.getElementById("fileList");
+    const fileTable = document.getElementById("fileTable");
 
-  // Vide la liste des fichiers avant d'ajouter les nouveaux
-  // fileList.innerHTML = "";
+    // Vide la liste des fichiers avant d'ajouter les nouveaux
+    // fileList.innerHTML = "";
 
-  // Affiche la table
-  fileTable.style.display = "block";
+    // Affiche la table
+    fileTable.style.display = "block";
 
-  // Parcourt les fichiers sélectionnés
-  Array.from(fileInput.files).forEach((file) => {
-    const fileRow = document.createElement("div");
-    fileRow.classList.add("tr-ic");
+    // Parcourt les fichiers sélectionnés
+    Array.from(fileInput.files).forEach((file) => {
+        const fileRow = document.createElement("div");
+        fileRow.classList.add("tr-ic");
 
-    fileRow.innerHTML = `
+        fileRow.innerHTML = `
                                                     <div class="th th-check"><input type="checkbox" name="" id=""></div>
                                                     <div class="th">
                                                         <p class="p-file-select-ic">${file.name}</p>
                                                     </div>
                                                <div class="select-ic th">
-        <label class="label-select-ic">
-        <div class="inpt-child-div">
-            <input type="text" class="status-input inpt-child" placeholder="Motivation" readonly>
-            <i class="arrow-idown">
-                <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z"
-                        fill="#585856" />
-                </svg>
-            </i>
-            <div class="status-dropdown dropdown hidden">
-                <div class="dropdown-item">Étudiant</div>
-                <div class="dropdown-item">Employé</div>
-                <div class="dropdown-item">Freelance</div>
-                <div class="dropdown-item">Chômeur</div>
-                <div class="dropdown-item">Retraité</div>
-            </div>
+            <label class="label-select-ic">
+                <div class="inpt-child-div">
+                    <input type="text" class="status-input inpt-child" placeholder="Motivation" readonly>
+                    <i class="arrow-idown">
+                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z" fill="#585856"/>
+                        </svg>
+                    </i>
+                    <div class="status-dropdown dropdown hiddenselect">
+                        <div class="dropdown-item">Motivation</div>
+                        <div class="dropdown-item">Pièces Justificatif</div>
+
+                    </div>
+                </div>
+            </label>
         </div>
-    </label>
-</div>
 
 
                                                     <div class="th-row th">
@@ -122,18 +87,44 @@ document.getElementById("fileInput").addEventListener("change", (event) => {
                                               
       `;
 
-    // Ajoute l'élément à la liste
-    fileList.appendChild(fileRow);
+        // Ajoute l'élément à la liste
+        fileList.appendChild(fileRow);
 
-    // Ajoute un événement pour la suppression
-    fileRow.querySelector(".delete-file").addEventListener("click", () => {
-      fileRow.remove();
-      if (fileList.children.length === 0) {
-        fileTable.style.display = "none";
-      }
+        // Récupérer les éléments nécessaires pour l'interaction
+        const input = fileRow.querySelector('.status-input');
+        const dropdown = fileRow.querySelector('.status-dropdown');
+        const items = dropdown.querySelectorAll('.dropdown-item');
+
+        // Gérer l'affichage du menu déroulant
+        input.addEventListener('click', () => {
+            dropdown.classList.toggle('hiddenselect');
+        });
+
+        // Gérer la sélection d'un élément dans le menu déroulant
+        items.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                input.value = e.target.textContent; // Mettre à jour la valeur de l'input
+                dropdown.classList.add('hiddenselect'); // Cacher le menu après la sélection
+            });
+        });
+
+        // Cacher le menu si on clique en dehors
+        document.addEventListener('click', (e) => {
+            if (!fileRow.contains(e.target)) {
+                dropdown.classList.add('hiddenselect');
+            }
+        });
+        // Ajoute un événement pour la suppression
+        fileRow.querySelector(".delete-file").addEventListener("click", () => {
+            fileRow.remove();
+            if (fileList.children.length === 0) {
+                fileTable.style.display = "none";
+            }
+        });
     });
-  });
 
-  fileInput.value = "";
+
+
+    fileInput.value = "";
 
 });

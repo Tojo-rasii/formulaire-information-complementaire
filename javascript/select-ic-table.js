@@ -1,21 +1,41 @@
-const input = document.getElementById('status-input');
-const dropdown = document.getElementById('status-dropdown');
+let isDropdownClick = false;
 
-// Toggle le menu déroulant au clic sur l'input
-input.addEventListener('click', (event) => {
-    event.stopPropagation(); // Empêche la propagation pour éviter de fermer immédiatement
-    dropdown.classList.toggle('hidden');
+// Sélectionne tous les inputs
+const inputs = document.querySelectorAll('.status-input');
+
+// Pour chaque input
+inputs.forEach(input => {
+    const dropdown = input.closest('.inpt-child-div').querySelector('.status-dropdown');
+
+    // Ouvre/ferme le dropdown au clic sur l'input
+    input.addEventListener('click', (event) => {
+        event.stopPropagation();
+        closeAllDropdowns();
+        dropdown.classList.toggle('hidden');
+    });
+
+    // Gère le clic sur une option du dropdown
+    dropdown.addEventListener('click', (event) => {
+        isDropdownClick = true; // Empêche la fermeture immédiate
+        if (event.target.classList.contains('dropdown-item')) {
+            input.value = event.target.textContent; // Met à jour la valeur de l'input
+            dropdown.classList.add('hidden'); // Ferme le menu après sélection
+        }
+    });
 });
 
-// Gère le clic sur les items du dropdown
-dropdown.addEventListener('click', (event) => {
-    if (event.target.classList.contains('dropdown-item')) {
-        input.value = event.target.textContent; // Met à jour la valeur de l'input
-        dropdown.classList.add('hidden'); // Ferme le menu
-    }
-});
-
-// Ferme le dropdown si on clique en dehors
+// Ferme tous les dropdowns au clic en dehors
 document.addEventListener('click', () => {
-    dropdown.classList.add('hidden');
+    if (isDropdownClick) {
+        isDropdownClick = false; // Réinitialise le flag
+        return;
+    }
+    closeAllDropdowns();
 });
+
+// Fonction pour fermer tous les dropdowns
+function closeAllDropdowns() {
+    document.querySelectorAll('.status-dropdown').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+    });
+}

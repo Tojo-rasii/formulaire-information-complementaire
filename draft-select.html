@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .status-dropdown {
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            width: 200px;
+            margin-top: 5px;
+        }
+
+        .dropdown-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: #f0f0f0;
+        }
+
+        .inpt-child-div {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <label class="label-select-ic">
+        <div class="inpt-child-div">
+            <input type="text" class="status-input inpt-child" placeholder="Motivation" readonly>
+            <i class="arrow-idown">
+                <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z"
+                        fill="#585856" />
+                </svg>
+            </i>
+            <div class="status-dropdown dropdown hidden">
+                <div class="dropdown-item">Étudiant</div>
+                <div class="dropdown-item">Employé</div>
+                <div class="dropdown-item">Freelance</div>
+                <div class="dropdown-item">Chômeur</div>
+                <div class="dropdown-item">Retraité</div>
+            </div>
+        </div>
+    </label>
+
+    <script>
+        let isDropdownClick = false;
+
+        // Sélectionne tous les inputs
+        const inputs = document.querySelectorAll('.status-input');
+
+        // Pour chaque input
+        inputs.forEach(input => {
+            const dropdown = input.closest('.inpt-child-div').querySelector('.status-dropdown');
+
+            // Ouvre/ferme le dropdown au clic sur l'input
+            input.addEventListener('click', (event) => {
+                event.stopPropagation();
+                closeAllDropdowns();
+                dropdown.classList.toggle('hidden');
+            });
+
+            // Gère le clic sur une option du dropdown
+            dropdown.addEventListener('click', (event) => {
+                isDropdownClick = true; // Empêche la fermeture immédiate
+                if (event.target.classList.contains('dropdown-item')) {
+                    input.value = event.target.textContent; // Met à jour la valeur de l'input
+                    dropdown.classList.add('hidden'); // Ferme le menu après sélection
+                }
+            });
+        });
+
+        // Ferme tous les dropdowns au clic en dehors
+        document.addEventListener('click', () => {
+            if (isDropdownClick) {
+                isDropdownClick = false; // Réinitialise le flag
+                return;
+            }
+            closeAllDropdowns();
+        });
+
+        // Fonction pour fermer tous les dropdowns
+        function closeAllDropdowns() {
+            document.querySelectorAll('.status-dropdown').forEach(dropdown => {
+                dropdown.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>
